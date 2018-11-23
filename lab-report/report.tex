@@ -1,0 +1,218 @@
+%-------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    11pt,
+    letterpaper,
+    onecolumn
+]{article}
+
+%-------------------------------------------------------------------------------
+%   REQUIRED PACKAGES
+%-------------------------------------------------------------------------------
+
+\usepackage{blindtext}
+\usepackage{geometry}
+\geometry{
+    includeheadfoot,
+    columnsep=1cm,
+    left=1in,
+    right=1in,
+    top=.5in,
+    bottom=.5in
+}
+
+%% Chinese support
+%\usepackage{fontspec}
+%\usepackage{xeCJK}
+%\setCJKmainfont{Source Han Sans TW}
+%\setCJKmonofont{Hack}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt
+%\setlength{\parskip}{0.3cm}
+
+\usepackage{fontspec}
+\setmonofont[Scale=0.9]{Hack}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{hyperref}
+\hypersetup{
+    %draft, % Uncomment to remove all links (for printing in black and white)
+    colorlinks = true,
+    linkcolor  = RoyalBlue,
+    citecolor  = RoyalBlue,
+    urlcolor   = RoyalBlue,
+    breaklinks = true,
+    bookmarks  = true,
+    bookmarksnumbered,
+}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bookmark}
+\bookmarksetup{numbered}
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+\usepackage{csquotes}
+\usepackage{booktabs} % Horizontal rules in tables
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+\graphicspath{{pic/}} % Specifies the directory where pictures are stored
+
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{acm}
+
+%-------------------------------------------------------------------------------
+%   CODE INCLUSION CONFIGURATION
+%-------------------------------------------------------------------------------
+
+\usepackage{listings}
+
+\lstset{language=C,
+        frame=LR,
+        belowcaptionskip=1\baselineskip,
+        breaklines=true,
+        xleftmargin=\parindent,
+        showstringspaces=false,
+        basicstyle=\footnotesize\ttfamily,
+        keywordstyle=\bfseries\color{Green},
+        commentstyle=\color{Gray},
+        identifierstyle=\color{Black},
+        stringstyle=\color{Orange},
+        %numbers=left, % Line numbers on left
+        %firstnumber=1, % Line numbers start with line 1
+        %numberstyle=\scriptsize\ttfamily\color{Brown},
+}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%   TITLE PAGE
+%-------------------------------------------------------------------------------
+
+\begin{titlepage}
+\centering
+
+% Name of your university/college
+\textsc{\LARGE University of Illinois at Urbana-Champaign}\\[2cm]
+% Major heading such as course name
+\textsc{\Large CS 000}\\[0.5cm]
+% Minor heading such as course title
+\textsc{\Large Course Title}\\[3cm]
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\HRule \\[0.5cm]
+{\huge Lab N: Lab Name}\\[0.5cm] % Title of your document
+\HRule \\[6cm]
+
+\textbf{Group members} \\[0.2cm]
+Member1 (netID), Member2 (netID) \\[0.2cm]
+\textbf{Instructor} \\[0.2cm]
+Instructor Name \\[3cm]
+
+{\today}
+
+\end{titlepage}
+\newpage
+
+
+%-------------------------------------------------------------------------------
+%   Abstract
+%-------------------------------------------------------------------------------
+
+%\begin{abstract}
+%
+%    Abstract content.
+%
+%\end{abstract}
+%\newpage
+
+
+%-------------------------------------------------------------------------------
+%   TABLE OF CONTENTS
+%-------------------------------------------------------------------------------
+
+%\tableofcontents
+%\newpage
+
+
+%-------------------------------------------------------------------------------
+%   1.
+%-------------------------------------------------------------------------------
+
+\section{} % 1
+
+Example text and reference cited as \cite{arianfar2012}.
+
+%------------------------------------------------
+
+\subsection{} % 1.1
+
+\subsubsection{} % 1.1.1
+
+
+%-------------------------------------------------------------------------------
+%   2.
+%-------------------------------------------------------------------------------
+
+\section{} % 2
+
+%------------------------------------------------
+
+\subsection{} % 2.1
+
+\subsubsection{} % 2.1.1
+
+
+%-------------------------------------------------------------------------------
+%   References
+%-------------------------------------------------------------------------------
+
+\renewcommand{\refname}{Reference} % Change the default bibliography title
+\bibliography{ref}
+
+%-------------------------------------------------------------------------------
+
+\end{document}
+
+%\footnotesize\begin{verbatim}
+%\end{verbatim}
+
+%\begin{lstlisting}[language=]
+%\end{lstlisting}
+
+%\begin{lstlisting}[language=,basicstyle=\scriptsize\ttfamily]
+%\end{lstlisting}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=1.0\linewidth]{pic-name}
+%\caption{Figure caption.}
+%\end{figure}
+
+%\begin{itemize}
+%\item
+%\end{itemize}
+
+%\begin{enumerate}
+%\item
+%\end{enumerate}
+
+%\begin{center}
+%\begin{tabular}{*3l}
+%\toprule
+%    hostname & Reserved internal IPs & Subnet mask \\
+%\midrule
+%    master  & 10.113.0.2 & 255.255.255.0 \\
+%\bottomrule
+%\end{tabular}
+%\end{center}

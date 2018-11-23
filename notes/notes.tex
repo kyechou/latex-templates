@@ -1,0 +1,239 @@
+%-------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    10pt,
+    letterpaper,
+    twocolumn
+]{article}
+
+%-------------------------------------------------------------------------------
+%   REQUIRED PACKAGES
+%-------------------------------------------------------------------------------
+
+\usepackage{blindtext}
+\usepackage{geometry}
+\geometry{
+    includeheadfoot,
+    columnsep=1cm,
+    left=1in,
+    right=1in,
+    top=.5in,
+    bottom=.5in
+}
+
+%% Chinese support
+%\usepackage{fontspec}
+%\usepackage{xeCJK}
+%\setCJKmainfont{Source Han Sans TW}
+%\setCJKmonofont{Hack}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt
+%\setlength{\parskip}{0.3cm}
+
+\usepackage{fontspec}
+\setmonofont[Scale=0.9]{Hack}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{hyperref}
+\hypersetup{
+    %draft, % Uncomment to remove all links (for printing in black and white)
+    colorlinks = true,
+    linkcolor  = RoyalBlue,
+    citecolor  = RoyalBlue,
+    urlcolor   = RoyalBlue,
+    breaklinks = true,
+    bookmarks  = true,
+    bookmarksnumbered,
+}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bookmark}
+\bookmarksetup{numbered}
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+\usepackage{csquotes}
+\usepackage{booktabs} % Horizontal rules in tables
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+\graphicspath{{pic/}} % Specifies the directory where pictures are stored
+
+\usepackage[sort&compress]{natbib}
+\bibliographystyle{apalike}
+
+%-------------------------------------------------------------------------------
+%   CODE INCLUSION CONFIGURATION
+%-------------------------------------------------------------------------------
+
+\usepackage{listings}
+
+\lstset{language=C,
+        frame=LR,
+        belowcaptionskip=1\baselineskip,
+        breaklines=true,
+        xleftmargin=\parindent,
+        showstringspaces=false,
+        basicstyle=\footnotesize\ttfamily,
+        keywordstyle=\bfseries\color{Green},
+        commentstyle=\color{Gray},
+        identifierstyle=\color{Black},
+        stringstyle=\color{Orange},
+        %numbers=left, % Line numbers on left
+        %firstnumber=1, % Line numbers start with line 1
+        %numberstyle=\scriptsize\ttfamily\color{Brown},
+}
+
+%-------------------------------------------------------------------------------
+%   STRUCTURE MODIFICATIONS
+%-------------------------------------------------------------------------------
+
+\setlength{\parskip}{3pt} % Slightly increase spacing between paragraphs
+
+% Uncomment to center section titles
+%\usepackage{sectsty}
+%\sectionfont{\centering}
+
+% Customizing the title section
+\usepackage{titling}
+
+% Allows customization of titles
+\usepackage{titlesec}
+% Roman numerals for the sections
+\renewcommand\thesection{\Roman{section}}
+% roman numerals for subsections
+\renewcommand\thesubsection{\roman{subsection}}
+% Change the look of the section titles
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
+% Change the look of the subsection titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{}
+
+%-------------------------------------------------------------------------------
+%   CUSTOM COMMANDS
+%-------------------------------------------------------------------------------
+
+\newcommand{\articletitle}[1]{\renewcommand{\articletitle}{#1}}
+\newcommand{\articlecitation}[1]{\renewcommand{\articlecitation}{#1}}
+\newcommand{\doctitle}{\articlecitation\ --- ``\articletitle''}
+\newcommand{\startdate}[1]{\renewcommand{\startdate}{#1}}
+
+%-------------------------------------------------------------------------------
+%   TITLE SECTION
+%-------------------------------------------------------------------------------
+
+\articletitle{TCP's Congestion Control Implementation in Linux Kernel}
+\articlecitation{\citealp*{arianfar2012}}
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+\pretitle{\begin{center}\LARGE\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{\doctitle}
+\author{Kuan-Yen Chou}
+
+\startdate{September 20, 2015}
+\date{\startdate; rev. \today}
+
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\pagestyle{myheadings} % Use custom headers
+\markright{\doctitle} % Place the article information into the header
+
+\thispagestyle{plain} % Plain formatting on the first page
+\maketitle
+
+%-------------------------------------------------------------------------------
+%   ARTICLE NOTES
+%-------------------------------------------------------------------------------
+
+\section*{Introduction}
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+%------------------------------------------------
+
+\section{Methodology Overview}
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+%------------------------------------------------
+
+\section{Results Overview}
+
+\blindtext
+
+\blindtext
+
+%------------------------------------------------
+
+\section{Discussion/Conclusions Overview}
+
+\blindtext
+
+\blindtext
+
+%------------------------------------------------
+
+\section*{Article Evaluation}
+
+\blindtext
+
+%-------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+
+\renewcommand{\refname}{Reference} % Change the default bibliography title
+\bibliography{ref}
+
+%-------------------------------------------------------------------------------
+
+\end{document}
+
+%\footnotesize\begin{verbatim}
+%\end{verbatim}
+
+%\begin{lstlisting}[language=]
+%\end{lstlisting}
+
+%\begin{lstlisting}[language=,basicstyle=\scriptsize\ttfamily]
+%\end{lstlisting}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=1.0\linewidth]{pic-name}
+%\caption{Figure caption.}
+%\end{figure}
+
+%\begin{itemize}
+%\item
+%\end{itemize}
+
+%\begin{enumerate}
+%\item
+%\end{enumerate}
+
+%\begin{center}
+%\begin{tabular}{*3l}
+%\toprule
+%    hostname & Reserved internal IPs & Subnet mask \\
+%\midrule
+%    master  & 10.113.0.2 & 255.255.255.0 \\
+%\bottomrule
+%\end{tabular}
+%\end{center}
