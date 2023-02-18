@@ -1,9 +1,5 @@
 #
-# Makefile for acmart package
-#
-# This file is in public domain
-#
-# $Id: Makefile,v 1.10 2016/04/14 21:55:57 boris Exp $
+# Makefile
 #
 
 PDF = paper.pdf
@@ -29,7 +25,8 @@ docclean:
 	*.ilg *.ind *.out *.lof \
 	*.lot *.bbl *.blg *.gls *.cut *.hd \
 	*.dvi *.ps *.thm *.tgz *.zip *.rpi \
-	*.fdb_latexmk *.fls
+	*.fdb_latexmk *.fls *.xdv *.bak *.tmp \
+	*.synctex.gz
 
 clean: docclean
 	$(RM) acmart.cls

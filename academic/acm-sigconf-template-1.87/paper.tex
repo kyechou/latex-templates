@@ -1,57 +1,78 @@
 %%
-%% This is file `sample-sigconf.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% samples.dtx  (with options: `sigconf')
-%%
-%% IMPORTANT NOTICE:
-%%
-%% For the copyright see the source file.
-%%
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-sigconf.tex.
-%%
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%%
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
-%%
-%% Commands for TeXCount
-%TC:macro \cite [option:text,text]
-%TC:macro \citep [option:text,text]
-%TC:macro \citet [option:text,text]
-%TC:envir table 0 1
-%TC:envir table* 0 1
-%TC:envir tabular [ignore] word
-%TC:envir displaymath 0 word
-%TC:envir math 0 word
-%TC:envir comment 0 0
-%%
-%%
-%% The first command in your LaTeX source must be the \documentclass
-%% command.
-%%
 %% For submission and review of your manuscript please change the
 %% command to \documentclass[manuscript, screen, review]{acmart}.
 %%
-%% When submitting camera ready or to TAPS, please change the command
-%% to \documentclass[sigconf]{acmart} or whichever template is required
-%% for your publication.
-%%
-%%
-\documentclass[sigconf]{acmart}
+\documentclass[sigconf,10pt]{acmart}
+
+% \renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference info
+% \settopmatter{printacmref=false, printccs=false, printfolios=true}
+% \setcopyright{none}
 
 %%
-%% \BibTeX command to typeset BibTeX logo in the docs
-\AtBeginDocument{%
-  \providecommand\BibTeX{{%
-    Bib\TeX}}}
+%% Additional packages
+%%
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+\usepackage[hang,scriptsize,tight,center]{subfigure}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{mathpartir} % Inference rules, semantics inference
+\usepackage{tikz} % lattice, diagram
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\SetKwComment{Comment}{// }{}
+\SetKwRepeat{Do}{do}{while}
+\SetKwProg{Fn}{Function}{:}{end}
+\SetCommentSty{}
+\usetikzlibrary{positioning}
+\usepackage{cleveref}
+\usepackage{bookmark}
+\bookmarksetup{numbered}
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+\usepackage{csquotes}
+\usepackage{booktabs} % Horizontal rules in tables
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+\usepackage{multirow} % Create tabular cells spanning multiple rows
+\usepackage{xspace} % Add a space unless the macro is followed by punctuations.
+\usepackage{flushend}
+\graphicspath{{figures/}{figures/experiments/}} % Specifies the directory where pictures are stored
+
+%%
+%% Code inclusion configuration
+%%
+\usepackage{listings}
+\lstset{language=,
+        frame=,
+        belowcaptionskip=1\baselineskip,
+        breaklines=true,
+        xleftmargin=\parindent,
+        showstringspaces=false,
+        basicstyle=\scriptsize\ttfamily,
+        keywordstyle=\bfseries\color{blue},
+        commentstyle=\color{gray},
+        identifierstyle=\color{black},
+        stringstyle=\color{green},
+        % numbers=left, % Line numbers on left
+        % firstnumber=1, % Line numbers start with line 1
+        numberstyle=\scriptsize\ttfamily\color{gray},
+}
+
+%%
+%% Custom commands
+%%
+\newcommand{\name}      {Scylla\xspace}
+\newcommand{\para}[1]   {\noindentparagraph{\bf #1 }}
+\newcommand{\fixme}[1]  {{\textcolor{red}{\textbf{[#1]}}}}
+\newcommand{\pbg}[1]    {{\textcolor{green}{[pbg: #1]}}}
+\newcommand{\pbgnew}[1] {{\textcolor{green}{#1}}}
+\newcommand{\ky}[1]     {{\color{blue}{[KY: #1]}}}
+\newcommand{\kynew}[1]  {{\color{blue}{#1}}}
 
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
@@ -85,19 +106,6 @@
 %%\acmSubmissionID{123-A56-BU3}
 
 %%
-%% For managing citations, it is recommended to use bibliography
-%% files in BibTeX format.
-%%
-%% You can then either use BibTeX with the ACM-Reference-Format style,
-%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
-%% support for advanced citation of software artefact from the
-%% biblatex-software package, also separately available on CTAN.
-%%
-%% Look at the sample-*-biblatex.tex files for templates showcasing
-%% the biblatex styles.
-%%
-
-%%
 %% The majority of ACM publications use numbered citations and
 %% references.  The command \citestyle{authoryear} switches to the
 %% "author year" style.
@@ -108,7 +116,6 @@
 %% Uncommenting
 %% the next command will enable that style.
 %%\citestyle{acmauthoryear}
-
 
 %%
 %% end of the preamble, start of the body of the document source.
